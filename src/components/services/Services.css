@@ -1,0 +1,154 @@
+.service_title {
+  /* Dostępne usługi */
+
+  position: absolute;
+  width: 500px;
+  height: 77px;
+  left: 239px;
+  top: 241px;
+
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 90px;
+
+  color: #ffffff;
+}
+
+.services_button {
+  /* Rectangle 8 */
+
+  position: absolute;
+  width: 680px;
+  height: 79px;
+  left: 113px;
+  top: 470px;
+  background: #e01010;
+  border-radius: 50px;
+  color: white;
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 80px;
+  text-align: center;
+}
+
+.services_button2 {
+  position: absolute;
+  width: 680px;
+  height: 79px;
+  left: 113px;
+  top: 588px;
+  background: #e01010;
+  border-radius: 50px;
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 80px;
+  text-align: center;
+  color: #ffffff;
+}
+.services_button3 {
+  position: absolute;
+  width: 680px;
+  height: 79px;
+  left: 113px;
+  top: 706px;
+  background: #e01010;
+  border-radius: 50px;
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 80px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.services_button4 {
+  position: absolute;
+  width: 680px;
+  height: 79px;
+  left: 113px;
+  top: 824px;
+  background: #e01010;
+  border-radius: 50px;
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 80px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.icon {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  left: 834px;
+  top: 475px;
+
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  left: 834px;
+  top: 475px;
+
+  background: #534e4e;
+  border-radius: 6px;
+}
+
+.icon2 {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  left: 834px;
+  top: 593px;
+
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  left: 834px;
+  top: 593px;
+
+  background: #534e4e;
+  border-radius: 6px;
+}
+
+.icon3 {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  left: 834px;
+  top: 593px;
+
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  left: 834px;
+  top: 711px;
+
+  background: #534e4e;
+  border-radius: 6px;
+}
+
+.icon4 {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  left: 834px;
+  top: 593px;
+
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  left: 834px;
+  top: 829px;
+
+  background: #534e4e;
+  border-radius: 6px;
+}
