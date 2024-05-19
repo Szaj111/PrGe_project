@@ -25,7 +25,7 @@ function Home({ tekst }) {
             <div className="home_subtitle">
               Strona internetowa poświęcona filmom oraz widzom
             </div>
-            <Link to="services">
+            <Link to="login_page">
               <button className="start_button">START</button>
             </Link>
           </div>

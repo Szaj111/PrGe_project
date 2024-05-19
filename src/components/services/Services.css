@@ -23,7 +23,7 @@
   width: 680px;
   height: 79px;
   left: 113px;
-  top: 470px;
+  top: 370px;
   background: #e01010;
   border-radius: 50px;
   color: white;
@@ -34,13 +34,17 @@
   line-height: 80px;
   text-align: center;
 }
+.services_button:hover {
+  border: 1px solid rgb(255, 255, 255);
+  font-weight: bolder;
+}
 
 .services_button2 {
   position: absolute;
   width: 680px;
   height: 79px;
   left: 113px;
-  top: 588px;
+  top: 488px;
   background: #e01010;
   border-radius: 50px;
   font-family: "Lato";
@@ -50,13 +54,17 @@
   line-height: 80px;
   text-align: center;
   color: #ffffff;
+}
+.services_button2:hover {
+  border: 1px solid rgb(255, 255, 255);
+  font-weight: bolder;
 }
 .services_button3 {
   position: absolute;
   width: 680px;
   height: 79px;
   left: 113px;
-  top: 706px;
+  top: 606px;
   background: #e01010;
   border-radius: 50px;
   font-family: "Lato";
@@ -67,13 +75,16 @@
   text-align: center;
   color: #ffffff;
 }
-
+.services_button3:hover {
+  border: 1px solid rgb(255, 255, 255);
+  font-weight: bolder;
+}
 .services_button4 {
   position: absolute;
   width: 680px;
   height: 79px;
   left: 113px;
-  top: 824px;
+  top: 724px;
   background: #e01010;
   border-radius: 50px;
   font-family: "Lato";
@@ -83,6 +94,10 @@
   line-height: 80px;
   text-align: center;
   color: #ffffff;
+}
+.services_button4:hover {
+  border: 1px solid rgb(255, 255, 255);
+  font-weight: bolder;
 }
 
 .icon {
@@ -90,16 +105,15 @@
   width: 70px;
   height: 70px;
   left: 834px;
-  top: 475px;
-
-  position: absolute;
-  width: 70px;
-  height: 70px;
-  left: 834px;
-  top: 475px;
+  top: 375px;
 
   background: #534e4e;
   border-radius: 6px;
+}
+
+.icon:hover {
+  border: 1px solid rgb(255, 255, 255);
+  font-weight: bolder;
 }
 
 .icon2 {
@@ -107,16 +121,14 @@
   width: 70px;
   height: 70px;
   left: 834px;
-  top: 593px;
-
-  position: absolute;
-  width: 70px;
-  height: 70px;
-  left: 834px;
-  top: 593px;
+  top: 493px;
 
   background: #534e4e;
   border-radius: 6px;
+}
+.icon2:hover {
+  border: 1px solid rgb(255, 255, 255);
+  font-weight: bolder;
 }
 
 .icon3 {
@@ -124,16 +136,14 @@
   width: 70px;
   height: 70px;
   left: 834px;
-  top: 593px;
-
-  position: absolute;
-  width: 70px;
-  height: 70px;
-  left: 834px;
-  top: 711px;
+  top: 611px;
 
   background: #534e4e;
   border-radius: 6px;
+}
+.icon3:hover {
+  border: 1px solid rgb(255, 255, 255);
+  font-weight: bolder;
 }
 
 .icon4 {
@@ -141,14 +151,43 @@
   width: 70px;
   height: 70px;
   left: 834px;
-  top: 593px;
-
-  position: absolute;
-  width: 70px;
-  height: 70px;
-  left: 834px;
-  top: 829px;
-
+  top: 729px;
   background: #534e4e;
   border-radius: 6px;
+}
+.icon4:hover {
+  border: 1px solid rgb(255, 255, 255);
+  font-weight: bolder;
+}
+
+.movie_top {
+  position: absolute;
+  width: 350px;
+  height: 339.15px;
+  left: 1086px;
+  top: 169px;
+}
+
+.movie_top2 {
+  position: absolute;
+  width: 350px;
+  height: 324px;
+  left: 1436px;
+  top: 184px;
+}
+
+.movie_bot {
+  position: absolute;
+  width: 350px;
+  height: 315.16px;
+  left: 1086px;
+  top: 498px;
+}
+
+.movie_bot2 {
+  position: absolute;
+  width: 350px;
+  height: 315px;
+  left: 1436px;
+  top: 498px;
 }
