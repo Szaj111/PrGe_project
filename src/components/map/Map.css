@@ -1,0 +1,139 @@
+.page {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+}
+.leaflet-container {
+  position: absolute;
+  width: 1134px;
+  height: 587px;
+  left: 150px;
+  top: 156px;
+}
+.map_border {
+  position: absolute;
+  width: 1170px;
+  height: 616px;
+  left: 130px;
+  top: 142px;
+  background: #534e4e;
+  border-radius: 7px;
+}
+
+.nick_input {
+  position: absolute;
+  width: 488px;
+  height: 57px;
+  left: 1335px;
+  top: 295px;
+  background: #534e4e;
+  border-radius: 20px;
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 38px;
+  color: #c2c2c2;
+}
+.nick_input:hover {
+  border: 1px solid rgb(255, 255, 255);
+  font-weight: bolder;
+}
+
+.category_input {
+  position: absolute;
+  width: 488px;
+  height: 57px;
+  left: 1335px;
+  top: 395px;
+  background: #534e4e;
+  border-radius: 20px;
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 38px;
+  color: #c2c2c2;
+}
+.category_input:hover {
+  border: 1px solid rgb(255, 255, 255);
+  font-weight: bolder;
+}
+
+.movie_input {
+  position: absolute;
+  width: 488px;
+  height: 57px;
+  left: 1335px;
+  top: 495px;
+  background: #534e4e;
+  border-radius: 20px;
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 38px;
+  color: #c2c2c2;
+}
+.movie_input:hover {
+  border: 1px solid rgb(255, 255, 255);
+  font-weight: bolder;
+}
+.serach_btn {
+  position: absolute;
+  width: 288px;
+  height: 57px;
+  left: 1435px;
+  top: 595px;
+  background: #534e4e;
+  border-radius: 20px;
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 38px;
+  color: #c2c2c2;
+}
+.serach_btn:hover {
+  border: 1px solid rgb(243, 25, 25);
+  font-weight: bolder;
+}
+
+.map_title {
+  position: absolute;
+  width: 418.71px;
+  height: 115px;
+  left: 523px;
+  top: 28px;
+  font-family: "League Gothic";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 96px;
+  line-height: 115px;
+  text-align: justify;
+  color: #e01010;
+}
+.icons_bgn {
+  position: absolute;
+  width: 296px;
+  height: 70px;
+  left: 1571px;
+  top: 40px;
+  background-color: #534e4e;
+}
+
+.icon_cat {
+  position: absolute;
+  width: 70px;
+  height: 104.13px;
+  left: 1571px;
+  top: 22px;
+}
+
+.icon_map {
+  position: absolute;
+  width: 70px;
+  height: 80px;
+  left: 1645px;
+  top: 35px;
+}

@@ -14,12 +14,12 @@ function Services() {
     <div className="services">
       <div className="service_title"> Dostępne usługi</div>
       <div className="services_left">
-        <Link to="map">
+        <Link to="/map">
           <button className="services_button">
             WYŚWIETLANIE MAPY UŻYTKOWNIKÓW
           </button>
         </Link>
-        <Link to="map">
+        <Link to="/map">
           <img className="icon" src={mapa} alt="ikona1"></img>
         </Link>
 

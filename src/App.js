@@ -20,7 +20,7 @@ const router = createBrowserRouter([
     element: <Login_page />,
   },
   {
-    path: "/login_page/services/map",
+    path: "/map",
     element: <Map />,
   },
 ]);
