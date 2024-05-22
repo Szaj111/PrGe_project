@@ -17,8 +17,8 @@ function Login_page() {
           type="text"
           placeholder="Email or login"
         />
-        <input className="pass_input" type="text" placeholder="Password" />
-        <Link to="services">
+        <input className="pass_input" type="password" placeholder="Password" />
+        <Link to="/services">
           <button className="login_button">ZALOGUJ</button>
         </Link>
       </div>

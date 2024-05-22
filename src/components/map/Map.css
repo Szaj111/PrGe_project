@@ -115,9 +115,9 @@
 }
 .icons_bgn {
   position: absolute;
-  width: 296px;
+  width: 365px;
   height: 70px;
-  left: 1571px;
+  left: 1500px;
   top: 40px;
   background-color: #534e4e;
 }
@@ -129,11 +129,49 @@
   left: 1571px;
   top: 22px;
 }
-
+.icon_cat:hover {
+  filter: brightness(0) invert(1);
+}
 .icon_map {
   position: absolute;
   width: 70px;
-  height: 80px;
+  height: 70px;
   left: 1645px;
-  top: 35px;
+  top: 40px;
+}
+.icon_map:hover {
+  filter: brightness(0) invert(1);
+}
+.icon_subs {
+  position: absolute;
+  width: 70px;
+  height: 80px;
+  left: 1720px;
+  top: 34px;
+}
+
+.icon_subs:hover {
+  filter: brightness(0) invert(1);
+}
+
+.icon_services {
+  position: absolute;
+  width: 55px;
+  height: 55px;
+  left: 1800px;
+  top: 46px;
+}
+.icon_services:hover {
+  filter: brightness(0) invert(1);
+}
+
+.icon_movies {
+  position: absolute;
+  width: 55px;
+  height: 55px;
+  left: 1510px;
+  top: 46px;
+}
+.icon_movies:hover {
+  filter: brightness(0) invert(1);
 }

@@ -18,21 +18,28 @@ function Services() {
           <button className="services_button">
             WYŚWIETLANIE MAPY UŻYTKOWNIKÓW
           </button>
-        </Link>
-        <Link to="/map">
           <img className="icon" src={mapa} alt="ikona1"></img>
         </Link>
+        <Link to="/users_list">
+          {" "}
+          <button className="services_button2">
+            WYŚWIETLANIE LISTY UŻYTKOWNIKÓW
+          </button>
+          <img className="icon2" src={lista} alt="ikona2"></img>
+        </Link>
 
-        <button className="services_button2">
-          WYŚWIETLANIE LISTY UŻYTKOWNIKÓW
-        </button>
-        <img className="icon2" src={lista} alt="ikona2"></img>
-        <button className="services_button3">WYŚWIETLANIE LISTY FILMÓW</button>
-        <img className="icon3" src={movie_list} alt="ikona3"></img>
-        <button className="services_button4">
-          WYŚWIETLANIE KATEGORII FILMOWYCH
-        </button>
-        <img className="icon4" src={category} alt="ikona4"></img>
+        <Link to="/movies_list">
+          <button className="services_button3">
+            WYŚWIETLANIE LISTY FILMÓW
+          </button>
+          <img className="icon3" src={movie_list} alt="ikona3"></img>
+        </Link>
+        <Link to="/movies">
+          <button className="services_button4">
+            WYŚWIETLANIE KATEGORII FILMOWYCH
+          </button>
+          <img className="icon4" src={category} alt="ikona4"></img>
+        </Link>
       </div>
       <div className="services_right"></div>
       <img className="movie_top" src={movie_top1} alt="zdjecie1"></img>

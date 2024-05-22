@@ -4,7 +4,9 @@ import Home from "./components/home/Home";
 import Services from "./components/services/Services";
 import Login_page from "./components/login_page/Login_page";
 import Map from "./components/map/Map";
+import Movies_list from "./components/movies_list/Movies_list";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import Movies from "./components/movies/Movies";
 
 const router = createBrowserRouter([
   {
@@ -12,7 +14,7 @@ const router = createBrowserRouter([
     element: <Home />,
   },
   {
-    path: "/login_page/services",
+    path: "/services",
     element: <Services />,
   },
   {
@@ -22,6 +24,18 @@ const router = createBrowserRouter([
   {
     path: "/map",
     element: <Map />,
+  },
+  {
+    path: "/movies",
+    element: <Movies />,
+  },
+  {
+    path: "/movies_list",
+    element: <Movies_list />,
+  },
+  {
+    path: "/user_list",
+    // element: <Movies />,
   },
 ]);
 

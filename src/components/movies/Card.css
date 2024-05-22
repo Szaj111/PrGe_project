@@ -1,0 +1,40 @@
+.custom-card {
+  max-width: 445px;
+  background-color: #333 !important;
+  color: #fff !important;
+}
+.custom-card:hover {
+  background-color: #cccccc56 !important; /* Kolor podświetlenia */
+  /* border: 1px solid rgb(255, 255, 255); */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3) !important;
+}
+
+.custom-card .MuiCardHeader-title {
+  font-size: 24px !important;
+  font-weight: bold !important;
+  color: #fff !important;
+}
+
+.custom-card .MuiCardContent-root {
+  font-size: 23px !important;
+  color: #ccc !important;
+}
+
+.custom-card .MuiTypography-body2 {
+  color: #fff !important;
+  font-size: 18px;
+}
+
+.custom-card .MuiButton-root {
+  color: #e01010 !important;
+  font-size: 15px;
+}
+.custom-card-content {
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.custom-card-button {
+  margin-top: auto;
+}

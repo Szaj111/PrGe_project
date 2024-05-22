@@ -1,0 +1,42 @@
+.movies_title {
+  position: absolute;
+  width: 423px;
+  height: 77px;
+  left: 755px;
+  top: 30px;
+
+  font-family: "League Gothic";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 77px;
+
+  color: #e01010;
+}
+
+.media_cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 150px;
+}
+
+.media_cards .MuiCard-root {
+  margin: 10px;
+}
+
+.media_cards .Muicard-root:first-child {
+  margin-left: auto;
+}
+
+@media (min-width: 1200px) {
+  .media_cards {
+    justify-content: space-between;
+  }
+}
+
+.bot_side {
+  width: 100vw;
+  height: 90px;
+}
