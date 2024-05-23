@@ -8,7 +8,8 @@
   line-height: 77px;
   text-align: center;
   color: #e01010;
-  left: 760px;
+  left: 730px !important;
+  top: 35px !important;
 }
 
 .data_tabs {
