@@ -20,7 +20,7 @@ function Services() {
           </button>
           <img className="icon" src={mapa} alt="ikona1"></img>
         </Link>
-        <Link to="/users_list">
+        <Link to="/subs_db">
           {" "}
           <button className="services_button2">
             WYŚWIETLANIE LISTY UŻYTKOWNIKÓW

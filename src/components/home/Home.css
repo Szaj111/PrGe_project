@@ -19,8 +19,8 @@ body {
   align-content: center;
 }
 .home_top {
-  min-height: 15vh;
-  background-color: aqua;
+  /* min-height: 15vh; */
+  /* background-color: aqua; */
 }
 
 .start_button {
@@ -47,19 +47,16 @@ body {
 
 .home_top_about {
   /* O portalu */
-
   position: absolute;
   width: 152px;
   height: 43px;
-  left: 1710px;
+  left: 17npm10px;
   top: 12px;
-
   font-family: "Lato";
   font-style: normal;
   font-weight: 400;
-  font-size: 36px;
+  font-size: 30px;
   line-height: 43px;
-
   color: #ffffff;
 }
 .home_top_about:hover {

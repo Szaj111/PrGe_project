@@ -2,13 +2,16 @@ import React from "react";
 import startowaImage from "./startowa.jpg";
 import "./Home.css";
 import { Link } from "react-router-dom";
+import { Button } from "@mui/material";
 
 function Home({ tekst }) {
   return (
     <div>
       <div className="home">
         <div className="home_top">
-          <div className="home_top_about">O portalu</div>
+          <Link to="/about" className="home_top_about">
+            O portalu
+          </Link>
         </div>
 
         <div className="home_bottom">

@@ -7,6 +7,8 @@ import Map from "./components/map/Map";
 import Movies_list from "./components/movies_list/Movies_list";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Movies from "./components/movies/Movies";
+import Subs_db from "./components/subs_db/Subs_db";
+import About from "./components/about/About";
 
 const router = createBrowserRouter([
   {
@@ -34,8 +36,12 @@ const router = createBrowserRouter([
     element: <Movies_list />,
   },
   {
-    path: "/user_list",
-    // element: <Movies />,
+    path: "/subs_db",
+    element: <Subs_db />,
+  },
+  {
+    path: "/about",
+    element: <About />,
   },
 ]);
 
