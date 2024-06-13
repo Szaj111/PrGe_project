@@ -42,7 +42,8 @@ function Map() {
     const getData = () => {
       axios
         .get(
-          "http://localhost:8080/geoserver/prge/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=prge%3Au%C5%BCytkownicy_db_mv_1&maxFeatures=50&outputFormat=application%2Fjson"
+          // "http://localhost:8080/geoserver/prge/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=prge%3Au%C5%BCytkownicy_db_mv_1&maxFeatures=50&outputFormat=application%2Fjson"
+          "http://localhost:8080/geoserver/prge/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=prge%3Au%C5%BCytkownicy_db_mv_4326&maxFeatures=50&outputFormat=application%2Fjson"
         )
         .then((dane) => {
           console.log(dane.data);
