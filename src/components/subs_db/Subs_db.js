@@ -19,14 +19,14 @@ const usersData = [
     id: 2,
     name: "Suchy",
     subsrypcja: "Basic",
-    miasto: "rezyser",
+    miasto: "Gizycko",
     obejrzane_filmy: "Killer",
   },
   {
     id: 3,
     name: "Stanley",
-    subsrypcja: "Action",
-    miasto: "Premium",
+    subsrypcja: "Premium",
+    miasto: "Gdynia",
     obejrzane_filmy: "Diuna, Shrek",
   },
 ];
