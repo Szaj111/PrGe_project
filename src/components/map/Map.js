@@ -22,7 +22,6 @@ import MapComponent from "./MapComponent.js";
 function Map() {
   const [uzytkownicy, setuzytkownicy] = useState(null);
   const [filteredUzytkownicy, setFilteredUzytkownicy] = useState(null);
-  const [filteredFilmy, setFilteredFilmy] = useState(null);
   const [searchNick, setSearchNick] = useState("");
   const [searchCategory, setSearchCategory] = useState("");
   const [searchFilm, setSearchFilm] = useState("");
@@ -37,7 +36,6 @@ function Map() {
         <strong>Oglądane filmy:</strong> ${feature.properties.obej_filmy} </br>
         <strong>Subskrypcja:</strong> ${feature.properties.subkrypcja} </br>
         <strong>Obejrzane kategorie: </strong> ${feature.properties.obej_kategorie} </br>
-
         <img src=${user_icon} width="48" height="32" />
       `);
       layer.setIcon(userIcon);
@@ -62,23 +60,21 @@ function Map() {
   }, []);
 
   const handleSearch = () => {
-    let filteredUsers = uzytkownicy;
-    let filteredMovies = uzytkownicy;
-
     if (
       searchNick.trim() === "" &&
       searchCategory.trim() === "" &&
       searchFilm.trim() === ""
     ) {
       setFilteredUzytkownicy(null);
-      setFilteredFilmy(null);
       return;
     }
 
+    let filtered = uzytkownicy;
+
     if (searchNick.trim() !== "") {
-      filteredUsers = {
-        ...filteredUsers,
-        features: filteredUsers.features.filter((feature) =>
+      filtered = {
+        ...filtered,
+        features: filtered.features.filter((feature) =>
           feature.properties.nick
             .toLowerCase()
             .includes(searchNick.toLowerCase())
@@ -87,9 +83,9 @@ function Map() {
     }
 
     if (searchCategory.trim() !== "") {
-      filteredUsers = {
-        ...filteredUsers,
-        features: filteredUsers.features.filter((feature) =>
+      filtered = {
+        ...filtered,
+        features: filtered.features.filter((feature) =>
           feature.properties.obej_kategorie
             .toLowerCase()
             .includes(searchCategory.toLowerCase())
@@ -97,16 +93,10 @@ function Map() {
       };
     }
 
-    setFilteredUzytkownicy(filteredUsers);
-    if (filteredUsers.features.length > 0) {
-      const { coordinates } = filteredUsers.features[0].geometry;
-      setCoordinates(coordinates);
-    }
-
     if (searchFilm.trim() !== "") {
-      filteredMovies = {
-        ...filteredMovies,
-        features: filteredMovies.features.filter((feature) =>
+      filtered = {
+        ...filtered,
+        features: filtered.features.filter((feature) =>
           feature.properties.obej_filmy
             .toLowerCase()
             .includes(searchFilm.toLowerCase())
@@ -114,15 +104,16 @@ function Map() {
       };
     }
 
-    setFilteredFilmy(filteredMovies);
-    if (filteredMovies.features.length > 0) {
-      const { coordinates } = filteredMovies.features[0].geometry;
+    setFilteredUzytkownicy(filtered);
+    if (filtered.features.length > 0) {
+      const coordinates = filtered.features[0].geometry.coordinates;
       setCoordinates(coordinates);
     }
   };
+
   return (
     <div className="page">
-      <div className="left side">
+      <div className="left_side">
         <div className="map_title">Netpchor Map</div>
         <div className="map_border"></div>
         <MapContainer center={[52.2322222, 21.0]} zoom={6}>
@@ -180,11 +171,10 @@ function Map() {
           <input
             className="movie_input"
             type="text"
-            placeholder="Podaj nazwe obejrzanego filmu"
+            placeholder="Podaj nazwę obejrzanego filmu"
             value={searchFilm}
             onChange={(e) => setSearchFilm(e.target.value)}
           />
-
           <button className="search_btn" onClick={handleSearch}>
             Wyszukaj
           </button>
