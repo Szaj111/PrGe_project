@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import "./Subs_db.css";
 import category from "../tmp/category.png";
 import map from "../tmp/mapa.png";
@@ -7,31 +8,33 @@ import services from "../tmp/menu.png";
 import movies from "../tmp/movie.png";
 import { Link } from "react-router-dom";
 
-const usersData = [
-  {
-    id: 1,
-    name: "Szym",
-    subsrypcja: "Premium",
-    miasto: "Wegorzewo",
-    obejrzane_filmy: "SAW_II",
-  },
-  {
-    id: 2,
-    name: "Suchy",
-    subsrypcja: "Basic",
-    miasto: "Gizycko",
-    obejrzane_filmy: "Killer",
-  },
-  {
-    id: 3,
-    name: "Stanley",
-    subsrypcja: "Premium",
-    miasto: "Gdynia",
-    obejrzane_filmy: "Diuna, Shrek",
-  },
-];
-
 function Subs_db() {
+  const [usersData, setUsersData] = useState([]);
+
+  useEffect(() => {
+    const getData = () => {
+      axios
+        .get(
+          "http://localhost:8080/geoserver/prge/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=prge%3Au%C5%BCytkownicy_db_mv_4326&maxFeatures=50&outputFormat=application%2Fjson"
+        )
+        .then((response) => {
+          const features = response.data.features.map((feature, index) => ({
+            id: index + 1,
+            nick: feature.properties.nick,
+            subsrypcja: feature.properties.subkrypcja,
+            miasto: feature.properties.miasto,
+            obejrzane_filmy: feature.properties.obej_filmy,
+          }));
+          setUsersData(features);
+        })
+        .catch((error) => {
+          console.error("Error fetching data:", error);
+        });
+    };
+
+    getData();
+  }, []);
+
   return (
     <div>
       <div className="title">Baza subskrybentów</div>
@@ -58,21 +61,21 @@ function Subs_db() {
           <table>
             <thead>
               <tr>
-                <th> Id</th>
-                <th> Nick</th>
-                <th> Subkrypcja</th>
-                <th> Miasto</th>
-                <th> obejrzane filmy</th>
+                <th>Id</th>
+                <th>Nick</th>
+                <th>Subkrypcja</th>
+                <th>Miasto</th>
+                <th>Obejrzane filmy</th>
               </tr>
             </thead>
             <tbody>
-              {usersData.map((users) => (
-                <tr key={users.id}>
-                  <td>{users.id}</td>
-                  <td>{users.name}</td>
-                  <td>{users.subsrypcja}</td>
-                  <td>{users.miasto}</td>
-                  <td>{users.obejrzane_filmy}</td>
+              {usersData.map((user) => (
+                <tr key={user.id}>
+                  <td>{user.id}</td>
+                  <td>{user.nick}</td>
+                  <td>{user.subsrypcja}</td>
+                  <td>{user.miasto}</td>
+                  <td>{user.obejrzane_filmy}</td>
                 </tr>
               ))}
             </tbody>
@@ -82,4 +85,5 @@ function Subs_db() {
     </div>
   );
 }
+
 export default Subs_db;
