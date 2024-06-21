@@ -15,42 +15,43 @@ import {
   WMSTileLayer,
   GeoJSON,
 } from "react-leaflet";
+
 import axios from "axios";
 import { userIcon } from "./Icon";
-import MapComponent from "./MapComponent.js";
 
 function Map() {
   const [uzytkownicy, setuzytkownicy] = useState(null);
-  const [filteredUzytkownicy, setFilteredUzytkownicy] = useState(null);
-  const [searchNick, setSearchNick] = useState("");
-  const [searchCategory, setSearchCategory] = useState("");
-  const [searchFilm, setSearchFilm] = useState("");
-  const [coordinates, setCoordinates] = useState(null);
 
   const makePopup = (feature, layer) => {
     if (feature.properties) {
+      console.log(feature.properties.nick);
+      console.log("Nick:", feature.properties.nick);
+      console.log("Miasto:", feature.properties.miasto);
+      console.log("Oglądane filmy:", feature.properties.obej_filmy);
+      console.log("Subskrypcja:", feature.properties.subkrypcja);
       layer.bindPopup(`
-        <h1>Dane użytkownika: </h1>
+        <h1>Dane uzytkownikow: </h1>
         <strong>Nazwa:</strong> ${feature.properties.nick} </br>
         <strong>Miasto:</strong> ${feature.properties.miasto} </br>
         <strong>Oglądane filmy:</strong> ${feature.properties.obej_filmy} </br>
-        <strong>Subskrypcja:</strong> ${feature.properties.subkrypcja} </br>
-        <strong>Obejrzane kategorie: </strong> ${feature.properties.obej_kategorie} </br>
-        <img src=${user_icon} width="48" height="32" />
+        <strong>Subskrypcja:</strong> ${feature.properties.subkrypcja}
+        <img src = ${user_icon} width="48" height="32"img/>
+
       `);
       layer.setIcon(userIcon);
     }
   };
 
   useEffect(() => {
+    console.log("dane");
     const getData = () => {
       axios
         .get(
           "http://localhost:8080/geoserver/prge/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=prge%3Au%C5%BCytkownicy_db_mv_4326&maxFeatures=50&outputFormat=application%2Fjson"
         )
-        .then((response) => {
-          setuzytkownicy(response.data);
-          console.log(response.data);
+        .then((dane) => {
+          console.log(dane.data);
+          setuzytkownicy(dane.data);
         })
         .catch((error) => {
           console.error("Error fetching data:", error);
@@ -59,61 +60,9 @@ function Map() {
     getData();
   }, []);
 
-  const handleSearch = () => {
-    if (
-      searchNick.trim() === "" &&
-      searchCategory.trim() === "" &&
-      searchFilm.trim() === ""
-    ) {
-      setFilteredUzytkownicy(null);
-      return;
-    }
-
-    let filtered = uzytkownicy;
-
-    if (searchNick.trim() !== "") {
-      filtered = {
-        ...filtered,
-        features: filtered.features.filter((feature) =>
-          feature.properties.nick
-            .toLowerCase()
-            .includes(searchNick.toLowerCase())
-        ),
-      };
-    }
-
-    if (searchCategory.trim() !== "") {
-      filtered = {
-        ...filtered,
-        features: filtered.features.filter((feature) =>
-          feature.properties.obej_kategorie
-            .toLowerCase()
-            .includes(searchCategory.toLowerCase())
-        ),
-      };
-    }
-
-    if (searchFilm.trim() !== "") {
-      filtered = {
-        ...filtered,
-        features: filtered.features.filter((feature) =>
-          feature.properties.obej_filmy
-            .toLowerCase()
-            .includes(searchFilm.toLowerCase())
-        ),
-      };
-    }
-
-    setFilteredUzytkownicy(filtered);
-    if (filtered.features.length > 0) {
-      const coordinates = filtered.features[0].geometry.coordinates;
-      setCoordinates(coordinates);
-    }
-  };
-
   return (
     <div className="page">
-      <div className="left_side">
+      <div className="left side">
         <div className="map_title">Netpchor Map</div>
         <div className="map_border"></div>
         <MapContainer center={[52.2322222, 21.0]} zoom={6}>
@@ -133,10 +82,17 @@ function Map() {
                 url="http://127.0.0.1:8080/geoserver/prge/wms"
               />
             </LayersControl.BaseLayer>
-            <LayersControl.Overlay checked name="Użytkownicy">
-              {(filteredUzytkownicy || uzytkownicy) && (
+            {/* <LayersControl.Overlay checked name="Uzytkownicy">
+              {uzytkownicy ? (
+                <GeoJSON data={uzytkownicy} onEachFeature={makePopup} />
+              ) : (
+                ""
+              )}
+            </LayersControl.Overlay> */}
+            <LayersControl.Overlay checked name="Uzytkownicy">
+              {uzytkownicy ? (
                 <GeoJSON
-                  data={filteredUzytkownicy || uzytkownicy}
+                  data={uzytkownicy}
                   style={() => ({
                     color: "blue",
                     weight: 2,
@@ -145,55 +101,48 @@ function Map() {
                   })}
                   onEachFeature={makePopup}
                 />
+              ) : (
+                ""
               )}
             </LayersControl.Overlay>
           </LayersControl>
-          {coordinates && <MapComponent coordinates={coordinates} />}
         </MapContainer>
       </div>
 
       <div className="right_side">
-        <div className="search">
+        <div className="serach">
           <input
             className="nick_input"
             type="text"
             placeholder="Podaj nick użytkownika"
-            value={searchNick}
-            onChange={(e) => setSearchNick(e.target.value)}
           />
           <input
             className="category_input"
             type="text"
             placeholder="Podaj kategorie obejrzanego filmu"
-            value={searchCategory}
-            onChange={(e) => setSearchCategory(e.target.value)}
           />
           <input
             className="movie_input"
             type="text"
-            placeholder="Podaj nazwę obejrzanego filmu"
-            value={searchFilm}
-            onChange={(e) => setSearchFilm(e.target.value)}
+            placeholder="Podaj nazwe obejrzanego filmu"
           />
-          <button className="search_btn" onClick={handleSearch}>
-            Wyszukaj
-          </button>
+          <button className="serach_btn">wyszukaj</button>
           <div className="web_side_ch">
             <div className="icons_bgn"></div>
             <Link to="/movies">
-              <img className="icon_cat" src={category} alt="ikona_1" />
+              <img className="icon_cat" src={category} alt="ikona_1"></img>
             </Link>
             <Link to="/map">
-              <img className="icon_map" src={map} alt="ikona_2" />
+              <img className="icon_map" src={map} alt="ikona_2"></img>
             </Link>
             <Link to="/subs_db">
-              <img className="icon_subs" src={db} alt="ikona3" />
+              <img className="icon_subs" src={db} alt="ikona3"></img>
             </Link>
             <Link to="/services">
-              <img className="icon_services" src={services} alt="ikona4" />
+              <img className="icon_services" src={services} alt="ikona4"></img>
             </Link>
             <Link to="/movies_list">
-              <img className="icon_movies" src={movies} alt="ikona5" />
+              <img className="icon_movies" src={movies} alt="ikona5"></img>
             </Link>
           </div>
         </div>
